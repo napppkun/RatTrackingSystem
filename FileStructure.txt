@@ -1,0 +1,94 @@
+/RatTracking_Project
+  ├── /backend
+  │     ├── /models
+  │     │    ├── userModel.js
+  │     │    ├── ratModel.js
+  │     │    ├── videoModel.js
+  │     │    ├── experimentModel.js
+  │     │    ├── resultModel.js
+  │     │    ├── frameDataModel.js
+  │     │    ├── armEntryModel.js
+  │     │    ├── bookmarkModel.js
+  │     ├── /controllers
+  │     │    ├── authController.js
+  │     │    ├── userController.js
+  │     │    ├── videoController.js
+  │     │    ├── experimentController.js
+  │     │    ├── resultController.js
+  │     │    ├── frameDataController.js
+  │     │    ├── armEntryController.js
+  │     │    ├── bookmarkController.js
+  │     ├── /routes
+  │     │    ├── authRoutes.js
+  │     │    ├── userRoutes.js
+  │     │    ├── videoRoutes.js
+  │     │    ├── experimentRoutes.js
+  │     │    ├── resultRoutes.js
+  │     │    ├── frameDataRoutes.js
+  │     │    ├── armEntryRoutes.js
+  │     │    ├── bookmarkRoutes.js
+  │     ├── /services
+  │     │    ├── gcsUploader.js         # ❌ อาจไม่จำเป็นหากไม่ใช้งาน Google Cloud
+  │     ├── /config
+  │     │    ├── db.js
+  │     │    ├── googleAuth.js
+  │     ├── /middleware
+  │     │    ├── authMiddleware.js
+  │     │    ├── errorMiddleware.js
+  │     ├── /processing                 # ✅ เพิ่มโมดูลประมวลผลวิดีโอในเครื่อง
+  │     │    ├── /algorithms            # ✅ โฟลเดอร์เก็บอัลกอริทึมต่างๆ
+  │     │    │    ├── motionTracking.py
+  │     │    │    ├── frameExtraction.py
+  │     │    │    ├── objectDetection.py
+  │     │    ├── /processingPipeline    # ✅ โฟลเดอร์สำหรับจัดการ pipeline การประมวลผล
+  │     │    │    ├── processManager.js
+  │     │    │    ├── jobQueue.js
+  │     │    │    ├── videoProcessor.js
+  │     │    ├── /utils
+  │     │    │    ├── fileHandler.js     # ✅ Utility จัดการไฟล์วิดีโอ
+  │     │    │    ├── formatConverter.js # ✅ แปลงฟอร์แมตวิดีโอหากจำเป็น
+  │     ├── .env
+  │     ├── server.js
+  │     ├── package.json
+  │     ├── .gitignore
+  ├── /frontend
+  │     ├── /src
+  │     │    ├── /components
+  │     │    │    ├── Sidebar.js
+  │     │    │    ├── UserProfile.js
+  │     │    │    ├── Experiment.js
+  │     │    │    ├── BookmarkButton.js
+  │     │    │    ├── ShareExperiment.js
+  │     │    │    ├── VideoPlayer.js
+  │     │    │    ├── GoogleLoginButton.js
+  │     │    ├── /pages
+  │     │    │    ├── HomePage.js
+  │     │    │    ├── RatsPage.js
+  │     │    │    ├── ExperimentPage.js
+  │     │    │    ├── HistoryPage.js
+  │     │    │    ├── BookmarksPage.js
+  │     │    │    ├── SharedExperimentsPage.js
+  │     │    │    ├── ProfilePage.js
+  │     │    │    ├── ProcessedVideoPage.js
+  │     │    │    ├── LoginPage.js
+  │     │    ├── App.js
+  │     │    ├── index.js
+  │     ├── public
+  │     │    ├── index.html
+  │     ├── package.json
+  │     ├── .gitignore
+  ├── /scripts                            # ✅ โฟลเดอร์สำหรับสคริปต์ช่วยงาน เช่น การเทรนโมเดล
+  │     ├── preprocess_data.py
+  │     ├── train_model.py
+  │     ├── export_results.py
+  ├── README.md
+  ├── LICENSE
+
+
+
+คำสั่ง run
+npm run dev                                                   
+
+install 
+npm install express mongoose dotenv cors jsonwebtoken bcryptjs
+
